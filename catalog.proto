@@ -1,0 +1,11 @@
+syntax = "proto3";
+package bench;
+service Catalog { rpc LookupItem (LookupRequest) returns (LookupReply); }
+message LookupRequest { int32 id = 1; }
+message LookupReply {
+  int32 id = 1;
+  string name = 2;
+  string category = 3;
+  int32 stock = 4;
+  bool ok = 5;
+}

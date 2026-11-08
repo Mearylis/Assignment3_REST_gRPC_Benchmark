@@ -1,0 +1,14 @@
+SMOKE: PASS: identical responses for valid IDs 1, 45, 100 and missing ID 101
+RUN repeat=1 load=1 protocol=grpc success=1757/1757 mean=1.703ms p95=2.211ms rps=582.31 cpu=51.04% rss=230.76MiB
+RUN repeat=1 load=1 protocol=rest success=1440/1440 mean=2.079ms p95=2.726ms rps=476.47 cpu=61.54% rss=236.51MiB
+RUN repeat=1 load=8 protocol=rest success=2061/2061 mean=11.63ms p95=23.801ms rps=681.57 cpu=112.77% rss=236.8MiB
+RUN repeat=1 load=8 protocol=grpc success=2594/2594 mean=9.229ms p95=19.489ms rps=850.66 cpu=63.29% rss=231.94MiB
+RUN repeat=1 load=24 protocol=rest success=1661/1661 mean=43.399ms p95=124.182ms rps=542.02 cpu=89.74% rss=237.57MiB
+RUN repeat=1 load=24 protocol=grpc success=1563/1563 mean=46.137ms p95=131.133ms rps=504.09 cpu=39.99% rss=233.12MiB
+RUN repeat=2 load=1 protocol=rest success=1472/1472 mean=2.034ms p95=2.52ms rps=487.31 cpu=63.56% rss=237.66MiB
+RUN repeat=2 load=1 protocol=grpc success=1846/1846 mean=1.621ms p95=2.086ms rps=611.14 cpu=49.33% rss=232.24MiB
+RUN repeat=2 load=8 protocol=grpc success=2618/2618 mean=9.154ms p95=25.491ms rps=859.05 cpu=63.33% rss=232.41MiB
+RUN repeat=2 load=8 protocol=rest success=2224/2224 mean=10.775ms p95=21.537ms rps=735.83 cpu=113.48% rss=237.63MiB
+RUN repeat=2 load=24 protocol=grpc success=1485/1485 mean=48.61ms p95=139.76ms rps=478.5 cpu=38.02% rss=232.96MiB
+RUN repeat=2 load=24 protocol=rest success=1564/1564 mean=46.188ms p95=135.944ms rps=508.15 cpu=78.3% rss=237.96MiB
+FILES: evidence/pilot_raw.csv evidence/pilot_summary.csv evidence/environment.json evidence/functional_test.txt

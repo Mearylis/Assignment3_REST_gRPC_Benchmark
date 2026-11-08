@@ -1,0 +1,46 @@
+{
+  "date_utc": "2026-10-16T20:10:49.540551+00:00",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.13.5",
+  "processor": "",
+  "cpu_logical": 5,
+  "libraries": {
+    "grpcio": "1.80.0",
+    "protobuf": "6.33.6",
+    "fastapi": "0.128.2",
+    "httpx": "0.28.1",
+    "uvicorn": "0.48.0",
+    "psutil": "7.2.2"
+  },
+  "design": "HTTP client -> constant FastAPI gateway -> REST(JSON/HTTP1.1) or gRPC(Protobuf/HTTP2) catalog service",
+  "test_settings": {
+    "repeats": 2,
+    "levels_concurrent_workers": [
+      1,
+      8,
+      24
+    ],
+    "measured_duration_each_s": 3.0,
+    "warmup_s": 0.25,
+    "host": "127.0.0.1",
+    "timeouts_s": 3
+  },
+  "limitations": [
+    "Shared sandbox environment, not dedicated hardware",
+    "Short exploratory runs",
+    "Non-identical server framework execution paths",
+    "HTTP gateway and driver overhead included",
+    "No TLS, no database or cross-host network",
+    "Peak RSS absolute not memory cost per request",
+    "Paired repeats may be influenced by background host load"
+  ],
+  "source_sha256": {
+    "catalog_schema.py": "89013a0d8d97946f199c4b9d0b904b72aa95af5a7cdf52b548e7e6fce909d324",
+    "catalog.proto": "48ca00b0b7e374ff6b8261c58517c9b59637890bd942af0f08392217713fd934",
+    "data.py": "b720642f71bde60219e32b66232bde7656affaf656d6f53bcace83b59eb82b2f",
+    "rest_service.py": "82dce9eb85fc9135aa8d50d7b47c57183a69afb0749e44b1088668fa1d7777f9",
+    "grpc_service.py": "34c981dfec598324135b885062d7eb78c08b5e15c8cc7cb817aebae47d27c2e1",
+    "gateway.py": "8084f6cada813d2a83eb3ccb8309980ffc3c39cb8dfb7a75614bb9a980f0f967",
+    "run_benchmark.py": "33e64581649705b69a232b4fbb19ca7d2afd3256ab6b01d060305332453f8b8e"
+  }
+}
